@@ -23,16 +23,16 @@ dependencies {
 ```xml
 <repositories>
 	<repository>
-      <id>jitpack</id>
-      <url>https://jitpack.io</url>
-    </repository>
+		<id>jitpack</id>
+		<url>https://jitpack.io</url>
+	</repository>
 </repositories>
 
 <dependencies>
 	<dependency>
-	    <groupId>com.github.AbstractMenus</groupId>
-	    <artifactId>api</artifactId>
-	    <version>main-SNAPSHOT</version>
+		<groupId>com.github.AbstractMenus</groupId>
+		<artifactId>api</artifactId>
+		<version>main-SNAPSHOT</version>
 	</dependency>
 </dependencies>
 ```
