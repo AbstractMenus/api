@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.AbstractMenus:api:main-SNAPSHOT'
+    compileOnly 'com.github.AbstractMenus:api:main-SNAPSHOT'
 }
 ```
 
@@ -22,17 +22,17 @@ dependencies {
 
 ```xml
 <repositories>
-	<repository>
-		<id>jitpack</id>
-		<url>https://jitpack.io</url>
-	</repository>
+    <repository>
+        <id>jitpack</id>
+        <url>https://jitpack.io</url>
+    </repository>
 </repositories>
 
 <dependencies>
-	<dependency>
-		<groupId>com.github.AbstractMenus</groupId>
-		<artifactId>api</artifactId>
-		<version>main-SNAPSHOT</version>
-	</dependency>
+    <dependency>
+        <groupId>com.github.AbstractMenus</groupId>
+        <artifactId>api</artifactId>
+        <version>main-SNAPSHOT</version>
+    </dependency>
 </dependencies>
 ```

@@ -37,6 +37,7 @@ public class Item implements Cloneable {
 
     /**
      * Add some property for this item
+     * @param key Property key
      * @param property Item property
      */
     public void addProperty(String key, ItemProperty property){

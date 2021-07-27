@@ -73,6 +73,7 @@ public interface Menu extends InventoryHolder, Cloneable {
     /**
      * Refresh item in specified inventory slot
      * @param slot Item slot index
+     * @param player Menu owner
      */
     void refreshItem(Slot slot, Player player);
 

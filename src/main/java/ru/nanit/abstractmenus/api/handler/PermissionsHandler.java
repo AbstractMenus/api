@@ -25,6 +25,7 @@ public interface PermissionsHandler {
      * Check is player has some permission
      * @param player Required player
      * @param permission Permission to check
+     * @return true if player has permission or false otherwise
      */
     boolean hasPermission(Player player, String permission);
 
@@ -46,6 +47,7 @@ public interface PermissionsHandler {
      * Check is player exist in specified permissions group
      * @param player Required player
      * @param group Group to check
+     * @return true if player member of group or false otherwise
      */
     boolean hasGroup(Player player, String group);
 
