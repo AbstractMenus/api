@@ -1,4 +1,4 @@
-# HOCON Configurate
+# AbstractMenus API
 
 API for AbstractMenus plugin.
 
