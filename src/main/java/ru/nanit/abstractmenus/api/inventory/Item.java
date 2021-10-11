@@ -25,6 +25,12 @@ public interface Item extends Cloneable {
     void addProperty(String key, ItemProperty property);
 
     /**
+     * Set new or replace all properties for this item
+     * @param properties Properties map
+     */
+    void setProperties(Map<String, ItemProperty> properties);
+
+    /**
      * Remove property from item
      * @param key Key (name) of the property. This key you specify in item block in menu file
      * @return Removed property or null if property with specified key is not assigned to item
@@ -46,4 +52,10 @@ public interface Item extends Cloneable {
      * @return Built ItemStack object
      */
     ItemStack build(Player player, Menu menu);
+
+    /**
+     * Clone this item
+     * @return
+     */
+    Item clone();
 }
