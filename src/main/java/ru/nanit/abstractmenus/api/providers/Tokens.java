@@ -5,7 +5,7 @@ import ninja.leaping.modded.configurate.objectmapping.serialize.TypeSerializer;
 import ninja.leaping.modded.configurate.objectmapping.serialize.TypeSerializers;
 import ru.nanit.abstractmenus.api.Action;
 import ru.nanit.abstractmenus.api.catalog.Catalog;
-import ru.nanit.abstractmenus.api.inventory.property.ItemProperty;
+import ru.nanit.abstractmenus.api.inventory.ItemProperty;
 import ru.nanit.abstractmenus.api.Activator;
 import ru.nanit.abstractmenus.api.Rule;
 

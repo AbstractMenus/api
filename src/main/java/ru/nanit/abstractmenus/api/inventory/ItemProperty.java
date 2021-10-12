@@ -1,9 +1,8 @@
-package ru.nanit.abstractmenus.api.inventory.property;
+package ru.nanit.abstractmenus.api.inventory;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import ru.nanit.abstractmenus.api.inventory.Menu;
 
 /**
  * Represent any item property

@@ -2,7 +2,6 @@ package ru.nanit.abstractmenus.api.inventory;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import ru.nanit.abstractmenus.api.inventory.property.ItemProperty;
 
 import java.util.*;
 
