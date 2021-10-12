@@ -54,7 +54,7 @@ public interface Item extends Cloneable {
 
     /**
      * Clone this item
-     * @return
+     * @return Cloned item
      */
     Item clone();
 }
