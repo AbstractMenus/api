@@ -1,8 +1,7 @@
 package ru.nanit.abstractmenus.api.providers;
 
-import com.google.common.reflect.TypeToken;
-import ninja.leaping.modded.configurate.objectmapping.serialize.TypeSerializer;
-import ninja.leaping.modded.configurate.objectmapping.serialize.TypeSerializers;
+import ru.abstractmenus.hocon.api.serialize.NodeSerializer;
+import ru.abstractmenus.hocon.api.serialize.NodeSerializers;
 import ru.nanit.abstractmenus.api.Action;
 import ru.nanit.abstractmenus.api.catalog.Catalog;
 import ru.nanit.abstractmenus.api.inventory.ItemProperty;
@@ -17,23 +16,25 @@ import java.util.Map;
  */
 public final class Tokens {
 
-    private static final Map<String, TypeToken> ACTION_TOKENS = new HashMap<>();
-    private static final Map<String, TypeToken> RULE_TOKENS = new HashMap<>();
-    private static final Map<String, TypeToken> ACTIVATOR_TOKENS = new HashMap<>();
-    private static final Map<String, TypeToken> ITEM_PROPERTIES = new HashMap<>();
-    private static final Map<String, TypeToken> CATALOGS = new HashMap<>();
+    private static final Map<String, Class<? extends Action>> ACTION_TOKENS = new HashMap<>();
+    private static final Map<String, Class<? extends Rule>> RULE_TOKENS = new HashMap<>();
+    private static final Map<String, Class<? extends Activator>> ACTIVATOR_TOKENS = new HashMap<>();
+    private static final Map<String, Class<? extends ItemProperty>> ITEM_PROPERTIES = new HashMap<>();
+    private static final Map<String, Class<? extends Catalog>> CATALOGS = new HashMap<>();
+    
+    private static final NodeSerializers SERIALIZERS = NodeSerializers.defaults();
 
     private Tokens(){}
 
     /**
      * Register new action
      * @param key Key of the action. This key uses in menu file
-     * @param token Type token of the action
+     * @param token Type of the action
      * @param serializer Serializer of the action
      * @param <T> Type of the action
      */
-    public static <T> void registerAction(String key, TypeToken<T> token, TypeSerializer<T> serializer){
-        TypeSerializers.getDefaultSerializers().registerType(token, serializer);
+    public static <T extends Action> void registerAction(String key, Class<T> token, NodeSerializer<T> serializer){
+        SERIALIZERS.register(token, serializer);
         ACTION_TOKENS.put(key.toLowerCase(), token);
     }
 
@@ -42,19 +43,19 @@ public final class Tokens {
      * @param key Action key
      * @return Found TypeToken of the registered action of null if token not found
      */
-    public static TypeToken<? extends Action> getActionType(String key){
+    public static Class<? extends Action> getActionType(String key){
         return ACTION_TOKENS.get(key.toLowerCase());
     }
 
     /**
      * Register new rule
      * @param key Key of the rule. This key uses in menu file
-     * @param token Type token of the rule
+     * @param token Type of the rule
      * @param serializer Serializer of the rule
      * @param <T> Type of the rule
      */
-    public static <T> void registerRule(String key, TypeToken<T> token, TypeSerializer<T> serializer){
-        TypeSerializers.getDefaultSerializers().registerType(token, serializer);
+    public static <T extends Rule> void registerRule(String key, Class<T> token, NodeSerializer<T> serializer){
+        SERIALIZERS.register(token, serializer);
         RULE_TOKENS.put(key.toLowerCase(), token);
     }
 
@@ -63,19 +64,19 @@ public final class Tokens {
      * @param key Rule key
      * @return Found TypeToken of the registered rule of null if token not found
      */
-    public static TypeToken<? extends Rule> getRuleType(String key){
+    public static Class<? extends Rule> getRuleType(String key){
         return RULE_TOKENS.get(key.toLowerCase());
     }
 
     /**
      * Register new menu activator
      * @param key Key of the activator. This key uses in menu file
-     * @param token Type token of the activator
+     * @param token Type of the activator
      * @param serializer Serializer of the activator
      * @param <T> Type of the activator
      */
-    public static <T> void registerActivator(String key, TypeToken<T> token, TypeSerializer<T> serializer){
-        TypeSerializers.getDefaultSerializers().registerType(token, serializer);
+    public static <T extends Activator> void registerActivator(String key, Class<T> token, NodeSerializer<T> serializer){
+        SERIALIZERS.register(token, serializer);
         ACTIVATOR_TOKENS.put(key.toLowerCase(), token);
     }
 
@@ -84,19 +85,19 @@ public final class Tokens {
      * @param key Activator key
      * @return Found TypeToken of the registered activator of null if token not found
      */
-    public static TypeToken<? extends Activator> getActivator(String key){
+    public static Class<? extends Activator> getActivator(String key){
         return ACTIVATOR_TOKENS.get(key.toLowerCase());
     }
 
     /**
      * Register new item property
      * @param key Key of the property. This key uses in menu file
-     * @param token Type token of the property
+     * @param token Type of the property
      * @param serializer Serializer of the property
      * @param <T> Type of the property
      */
-    public static <T> void registerItemProperty(String key, TypeToken<T> token, TypeSerializer<T> serializer){
-        TypeSerializers.getDefaultSerializers().registerType(token, serializer);
+    public static <T extends ItemProperty> void registerItemProperty(String key, Class<T> token, NodeSerializer<T> serializer){
+        SERIALIZERS.register(token, serializer);
         ITEM_PROPERTIES.put(key.toLowerCase(), token);
     }
 
@@ -105,19 +106,19 @@ public final class Tokens {
      * @param key Item property key
      * @return Found TypeToken of the registered item property of null if token not found
      */
-    public static TypeToken<? extends ItemProperty> getItemPropertyType(String key){
+    public static Class<? extends ItemProperty> getItemPropertyType(String key){
         return ITEM_PROPERTIES.get(key.toLowerCase());
     }
 
     /**
      * Register new catalog
      * @param key Key of the catalog. This key uses in menu file
-     * @param token Type token of the catalog
+     * @param token Type of the catalog
      * @param serializer Serializer of the catalog
      * @param <T> Type of the catalog
      */
-    public static <T> void registerCatalog(String key, TypeToken<T> token, TypeSerializer<T> serializer){
-        TypeSerializers.getDefaultSerializers().registerType(token, serializer);
+    public static <T extends Catalog> void registerCatalog(String key, Class<T> token, NodeSerializer<T> serializer){
+        SERIALIZERS.register(token, serializer);
         CATALOGS.put(key.toLowerCase(), token);
     }
 
@@ -126,7 +127,7 @@ public final class Tokens {
      * @param key Catalog key
      * @return Found TypeToken of the registered catalog of null if token not found
      */
-    public static TypeToken<? extends Catalog> getCatalogType(String key){
+    public static Class<? extends Catalog> getCatalogType(String key){
         return CATALOGS.get(key.toLowerCase());
     }
 }

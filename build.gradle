@@ -1,15 +1,11 @@
 plugins {
-    id 'java'
+    id 'java-library'
     id 'maven-publish'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
 }
 
-apply plugin: 'java'
-apply plugin: 'maven-publish'
-apply plugin: 'com.github.johnrengelman.shadow'
-
 group 'ru.nanit'
-version '1.10.1'
+version '1.14'
 
 repositories {
     mavenCentral()
@@ -23,9 +19,13 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
-    implementation 'com.github.AbstractMenus:configurate:main-SNAPSHOT'
+    api 'com.github.AbstractMenus:hocon:1.0'
 
-    compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
+    shadow 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
+}
+
+shadowJar {
+    archiveClassifier.set('')
 }
 
 java {
@@ -33,13 +33,8 @@ java {
     withSourcesJar()
 }
 
-task sourceJar(type: Jar) {
-    from sourceSets.main.allJava
-    archiveClassifier = "sources"
-}
-
-shadowJar {
-    archiveClassifier.set('')
+test {
+    useJUnitPlatform()
 }
 
 project.afterEvaluate {
@@ -47,12 +42,9 @@ project.afterEvaluate {
         publications {
             shadow(MavenPublication) { publication ->
                 project.shadow.component(publication)
-                artifact sourceJar
+                artifact sourcesJar
+                artifact javadocJar
             }
         }
     }
-}
-
-test {
-    useJUnitPlatform()
 }
