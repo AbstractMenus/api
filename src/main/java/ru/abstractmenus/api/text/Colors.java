@@ -1,4 +1,4 @@
-package ru.nanit.abstractmenus.api.text;
+package ru.abstractmenus.api.text;
 
 import org.bukkit.ChatColor;
 

@@ -1,4 +1,4 @@
-package ru.nanit.abstractmenus.api.inventory;
+package ru.abstractmenus.api.inventory;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

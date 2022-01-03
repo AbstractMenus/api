@@ -1,7 +1,7 @@
-package ru.nanit.abstractmenus.api.catalog;
+package ru.abstractmenus.api.catalog;
 
 import org.bukkit.entity.Player;
-import ru.nanit.abstractmenus.api.inventory.Menu;
+import ru.abstractmenus.api.inventory.Menu;
 
 /**
  * Catalog is an objects collection provider

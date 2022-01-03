@@ -1,8 +1,8 @@
-package ru.nanit.abstractmenus.api;
+package ru.abstractmenus.api;
 
 import org.bukkit.entity.Player;
-import ru.nanit.abstractmenus.api.inventory.Menu;
-import ru.nanit.abstractmenus.api.inventory.Item;
+import ru.abstractmenus.api.inventory.Menu;
+import ru.abstractmenus.api.inventory.Item;
 
 /**
  * Represents menu action.

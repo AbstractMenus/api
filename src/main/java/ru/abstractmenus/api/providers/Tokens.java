@@ -1,18 +1,18 @@
-package ru.nanit.abstractmenus.api.providers;
+package ru.abstractmenus.api.providers;
 
+import ru.abstractmenus.api.Action;
+import ru.abstractmenus.api.Activator;
+import ru.abstractmenus.api.Rule;
+import ru.abstractmenus.api.inventory.ItemProperty;
 import ru.abstractmenus.hocon.api.serialize.NodeSerializer;
 import ru.abstractmenus.hocon.api.serialize.NodeSerializers;
-import ru.nanit.abstractmenus.api.Action;
-import ru.nanit.abstractmenus.api.catalog.Catalog;
-import ru.nanit.abstractmenus.api.inventory.ItemProperty;
-import ru.nanit.abstractmenus.api.Activator;
-import ru.nanit.abstractmenus.api.Rule;
+import ru.abstractmenus.api.catalog.Catalog;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Type tokens provider. All menu data tokens registering here
+ * Types provider. All data types for menus registering here
  */
 public final class Tokens {
 

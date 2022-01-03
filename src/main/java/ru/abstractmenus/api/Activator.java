@@ -1,14 +1,18 @@
-package ru.nanit.abstractmenus.api;
+package ru.abstractmenus.api;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import ru.nanit.abstractmenus.api.inventory.Menu;
+import ru.abstractmenus.api.inventory.Menu;
 
 /**
- * Menu activator. Activator must be registered as event listener
+ * Menu activator. Activator will be registered as event listener.
+ * Do not register it manually, plugin does this automatically
  */
 public abstract class Activator implements Listener {
 
+    /**
+     * Menu instance
+     */
     protected Menu menu;
 
     /**
@@ -19,6 +23,10 @@ public abstract class Activator implements Listener {
         this.menu = menu;
     }
 
+    /**
+     * Open menu for a player
+     * @param player Player to open menu
+     */
     protected void openMenu(Player player){
         AbstractMenusProvider.get().openMenu(player, menu);
     }

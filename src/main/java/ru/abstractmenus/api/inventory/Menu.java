@@ -1,9 +1,9 @@
-package ru.nanit.abstractmenus.api.inventory;
+package ru.abstractmenus.api.inventory;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.InventoryHolder;
-import ru.nanit.abstractmenus.api.Activator;
+import ru.abstractmenus.api.Activator;
 
 import java.util.Collection;
 import java.util.List;

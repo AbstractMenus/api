@@ -1,9 +1,12 @@
-package ru.nanit.abstractmenus.api;
+package ru.abstractmenus.api;
 
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import ru.nanit.abstractmenus.api.inventory.Menu;
+import ru.abstractmenus.api.inventory.Menu;
 
+/**
+ * Base plugin interface
+ */
 public interface AbstractMenusPlugin {
 
     /**

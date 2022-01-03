@@ -1,6 +1,6 @@
-package ru.nanit.abstractmenus.api.providers;
+package ru.abstractmenus.api.providers;
 
-import ru.nanit.abstractmenus.api.handler.*;
+import ru.abstractmenus.api.handler.*;
 
 /**
  * Data handlers provider

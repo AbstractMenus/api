@@ -1,7 +1,7 @@
-package ru.nanit.abstractmenus.api.catalog;
+package ru.abstractmenus.api.catalog;
 
 import org.bukkit.entity.Player;
-import ru.nanit.abstractmenus.api.inventory.Menu;
+import ru.abstractmenus.api.inventory.Menu;
 
 import java.util.*;
 
@@ -21,11 +21,20 @@ public abstract class Snapshot<T> {
     private int page;
     private int pages;
 
+    /**
+     * Create new snapshot
+     * @param player Menu owner
+     * @param menu Menu instance
+     */
     public Snapshot(Player player, Menu menu){
         this.player = player;
         this.menu = menu;
     }
 
+    /**
+     * Get type of object which this snapshot contains
+     * @return Type of snapshot's objects
+     */
     public Class<T> getType(){
         return (Class<T>) elements.iterator().next().getClass();
     }

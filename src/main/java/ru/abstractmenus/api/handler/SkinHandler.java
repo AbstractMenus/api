@@ -1,4 +1,4 @@
-package ru.nanit.abstractmenus.api.handler;
+package ru.abstractmenus.api.handler;
 
 import org.bukkit.entity.Player;
 
