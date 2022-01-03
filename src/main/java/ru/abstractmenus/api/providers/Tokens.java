@@ -22,7 +22,7 @@ public final class Tokens {
     private static final Map<String, Class<? extends ItemProperty>> ITEM_PROPERTIES = new HashMap<>();
     private static final Map<String, Class<? extends Catalog>> CATALOGS = new HashMap<>();
     
-    private static final NodeSerializers SERIALIZERS = NodeSerializers.defaults();
+    public static final NodeSerializers SERIALIZERS = NodeSerializers.defaults();
 
     private Tokens(){}
 
