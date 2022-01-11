@@ -30,12 +30,29 @@ public interface VariableManager {
     void saveGlobal(Var var, boolean replace);
 
     /**
+     * Create or update variable as personal for some player
+     * @param var Variable data
+     */
+    default void saveGlobal(Var var) {
+        saveGlobal(var, true);
+    }
+
+    /**
      * Save variable as personal for some player
      * @param var Variable data
      * @param player Variable owner
      * @param replace If false, then stored variable won't be replaced
      */
     void savePersonal(Player player, Var var, boolean replace);
+
+    /**
+     * Create or update variable as personal for some player
+     * @param var Variable data
+     * @param player Variable owner
+     */
+    default void savePersonal(Player player, Var var) {
+        savePersonal(player, var, true);
+    }
 
     /**
      * Delete global variable by key
@@ -52,7 +69,7 @@ public interface VariableManager {
 
     /**
      * Create builder for variable
-     * @return New vaiable builder
+     * @return New variable builder
      */
     VarBuilder createBuilder();
 
