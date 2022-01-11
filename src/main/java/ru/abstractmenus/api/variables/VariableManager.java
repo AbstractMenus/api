@@ -32,6 +32,7 @@ public interface VariableManager {
     /**
      * Save variable as personal for some player
      * @param var Variable data
+     * @param player Variable owner
      * @param replace If false, then stored variable won't be replaced
      */
     void savePersonal(Player player, Var var, boolean replace);

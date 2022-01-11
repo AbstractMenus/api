@@ -1,5 +1,8 @@
 package ru.abstractmenus.api.variables;
 
+/**
+ * Builder for variable
+ */
 public interface VarBuilder {
 
     /**
