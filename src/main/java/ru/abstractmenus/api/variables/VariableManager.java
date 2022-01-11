@@ -1,7 +1,5 @@
 package ru.abstractmenus.api.variables;
 
-import org.bukkit.entity.Player;
-
 /**
  * Manager for variables. Here you can use CRUD methods to manipulate with variables
  */
@@ -16,11 +14,11 @@ public interface VariableManager {
 
     /**
      * Get personal variable
-     * @param player Owner if variable
+     * @param username Owner if variable
      * @param name Key of variable
      * @return Found variable of null
      */
-    Var getPersonal(Player player, String name);
+    Var getPersonal(String username, String name);
 
     /**
      * Save variable as global
@@ -40,18 +38,18 @@ public interface VariableManager {
     /**
      * Save variable as personal for some player
      * @param var Variable data
-     * @param player Variable owner
+     * @param username Variable owner
      * @param replace If false, then stored variable won't be replaced
      */
-    void savePersonal(Player player, Var var, boolean replace);
+    void savePersonal(String username, Var var, boolean replace);
 
     /**
      * Create or update variable as personal for some player
      * @param var Variable data
-     * @param player Variable owner
+     * @param username Variable owner
      */
-    default void savePersonal(Player player, Var var) {
-        savePersonal(player, var, true);
+    default void savePersonal(String username, Var var) {
+        savePersonal(username, var, true);
     }
 
     /**
@@ -62,10 +60,10 @@ public interface VariableManager {
 
     /**
      * Delete personal variable by name and owner
-     * @param player Variable owner
+     * @param username Variable owner
      * @param name Name of variable
      */
-    void deletePersonal(Player player, String name);
+    void deletePersonal(String username, String name);
 
     /**
      * Create builder for variable

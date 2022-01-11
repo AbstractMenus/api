@@ -21,7 +21,7 @@ public interface Var {
     /**
      * Expiry time of this variable, if specified.
      * This time can be compared, using System.currentTimeMillis()
-     * If variable has no expiry time, it will return -1
+     * If variable has no expiry time, it will return 0
      * @return Expiry time
      */
     long expiry();
@@ -31,6 +31,12 @@ public interface Var {
      * @return Try if variable has expiry time or false otherwise
      */
     boolean hasExpiry();
+
+    /**
+     * Is this variable expired
+     * @return true if variable expired, false otherwise
+     */
+    boolean isExpired();
 
     /**
      * Parse value as boolean
