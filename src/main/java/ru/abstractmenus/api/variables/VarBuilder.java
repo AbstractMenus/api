@@ -6,10 +6,10 @@ package ru.abstractmenus.api.variables;
 public interface VarBuilder {
 
     /**
-     * Get current key
-     * @return Current key
+     * Get current name
+     * @return Current name
      */
-    String key();
+    String name();
 
     /**
      * Get current value
@@ -25,10 +25,10 @@ public interface VarBuilder {
 
     /**
      * Set expiry time to variable
-     * @param key Variable key. Key should contain only latin chars and special symbol `_`
+     * @param name Variable name. Name should contain only Latin chars and special symbol `_`
      * @return Builder instance
      */
-    VarBuilder key(String key);
+    VarBuilder name(String name);
 
     /**
      * Set expiry time to variable

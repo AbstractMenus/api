@@ -7,10 +7,10 @@ package ru.abstractmenus.api.variables;
 public interface Var {
 
     /**
-     * Key of this variable
-     * @return Key of this variable
+     * Name of this variable
+     * @return Name of this variable
      */
-    String key();
+    String name();
 
     /**
      * Raw value of variable. Values always stored in string format

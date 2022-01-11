@@ -9,18 +9,18 @@ public interface VariableManager {
 
     /**
      * Get global variable
-     * @param key Key of variable
+     * @param name Key of variable
      * @return Found variable or null
      */
-    Var getGlobal(String key);
+    Var getGlobal(String name);
 
     /**
      * Get personal variable
      * @param player Owner if variable
-     * @param key Key of variable
+     * @param name Key of variable
      * @return Found variable of null
      */
-    Var getPersonal(Player player, String key);
+    Var getPersonal(Player player, String name);
 
     /**
      * Save variable as global
@@ -55,17 +55,17 @@ public interface VariableManager {
     }
 
     /**
-     * Delete global variable by key
-     * @param key Key of variable
+     * Delete global variable by name
+     * @param name Name of variable
      */
-    void deleteGlobal(String key);
+    void deleteGlobal(String name);
 
     /**
-     * Delete personal variable by key and owner
+     * Delete personal variable by name and owner
      * @param player Variable owner
-     * @param var Key of variable
+     * @param name Name of variable
      */
-    void deletePersonal(Player player, Var var);
+    void deletePersonal(Player player, String name);
 
     /**
      * Create builder for variable
