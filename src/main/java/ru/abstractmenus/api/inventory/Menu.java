@@ -7,6 +7,7 @@ import ru.abstractmenus.api.Activator;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Represents a menu
@@ -18,6 +19,18 @@ public interface Menu extends InventoryHolder, Cloneable {
      * @return List of menu activators
      */
     List<Activator> getActivators();
+
+    /**
+     * Get activator that causes menu opening. Will be empty, if menu opened without activator
+     * @return Activator in Optional wrapper
+     */
+    Optional<Activator> getActivatedBy();
+
+    /**
+     * Set activator which activated this menu
+     * @param activator Activator instance
+     */
+    void setActivatedBy(Activator activator);
 
     /**
      * Get menu's inventory type

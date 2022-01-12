@@ -6,13 +6,6 @@ package ru.abstractmenus.api.variables;
 public interface VariableManager {
 
     /**
-     * Get local cache storage. Usually used by activators variables system,
-     * but can be used for any purposes in future
-     * @return Local cache storage
-     */
-    LocalCache cache();
-
-    /**
      * Get global variable
      * @param name Key of variable
      * @return Found variable or null
