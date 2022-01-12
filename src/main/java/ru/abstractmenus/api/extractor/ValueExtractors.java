@@ -14,12 +14,16 @@ public final class ValueExtractors {
 
     /**
      * Get extractor for type
-     * @param type Data type class
+     * @param value Value to get extractor
      * @param <T> Data type
      * @return Found extractor or null
      */
-    public static <T> ValueExtractor<T> get(Class<T> type) {
-        return (ValueExtractor<T>) EXTRACTORS.get(type);
+    public static <T> ValueExtractor<T> get(Object value) {
+        for (Map.Entry<Class<?>, ValueExtractor<?>> entry : EXTRACTORS.entrySet()) {
+            if (entry.getKey().isInstance(value))
+                return (ValueExtractor<T>) entry.getValue();
+        }
+        return null;
     }
 
     /**
