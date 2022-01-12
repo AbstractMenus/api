@@ -1,4 +1,4 @@
-package ru.abstractmenus.api.providers;
+package ru.abstractmenus.api;
 
 import ru.abstractmenus.api.handler.*;
 

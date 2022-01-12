@@ -19,7 +19,6 @@ public abstract class Activator implements Listener {
      * Menu instance
      */
     protected Menu menu;
-    private String name;
 
     /**
      * Set menu to this activator
@@ -30,16 +29,6 @@ public abstract class Activator implements Listener {
     }
 
     /**
-     * Local method to set activator name when activator parsed.
-     * You shouldn't call this method.
-     * This needed for AM backed to save activator name in placeholder
-     * @param name Activator name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
      * Open menu for a player
      * @param ctx Opening context. This can be Bukkit Event or something else
      * @param player Player to open menu
@@ -47,7 +36,7 @@ public abstract class Activator implements Listener {
     protected void openMenu(Object ctx, Player player) {
         AbstractMenusPlugin plugin = AbstractMenusProvider.get();
         Map<String, String> vars = new HashMap<>();
-        vars.put("name", name);
+        vars.put("name", Types.getActivatorName(getClass()));
         cache(ctx, vars);
         plugin.getVariableManager().cache()
                 .cache(player.getName(), CACHE_SCOPE, vars);
