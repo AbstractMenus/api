@@ -3,9 +3,8 @@ package ru.abstractmenus.api;
 /**
  * Implementors of extractor can take some
  * object with placeholder and return required data from this object
- * @param <T> Type of accepted object
  */
-public interface ValueExtractor<T> {
+public interface ValueExtractor {
 
     /**
      * Get some data from given object by placeholder
@@ -13,6 +12,6 @@ public interface ValueExtractor<T> {
      * @param placeholder Placeholder like "location_x"
      * @return Resulting value in String format, or null
      */
-    String extract(T obj, String placeholder);
+    String extract(Object obj, String placeholder);
 
 }
