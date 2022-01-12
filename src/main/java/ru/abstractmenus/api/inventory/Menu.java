@@ -21,7 +21,7 @@ public interface Menu extends InventoryHolder, Cloneable {
     List<Activator> getActivators();
 
     /**
-     * Get activator that causes menu opening. Will be empty, if menu opened without activator
+     * Get activator that caused menu opening. Will be empty, if menu opened without activator
      * @return Activator in Optional wrapper
      */
     Optional<Activator> getActivatedBy();

@@ -10,6 +10,14 @@ import java.util.List;
 public interface PlaceholderHandler {
 
     /**
+     * Replace only given placeholder
+     * @param player Context player
+     * @param placeholder Placeholder key
+     * @return Replaced value
+     */
+    String replacePlaceholder(Player player, String placeholder);
+
+    /**
      * Replace placeholders in single string
      * @param player Player who opened menu
      * @param str String to replace
