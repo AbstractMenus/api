@@ -43,9 +43,8 @@ public abstract class Activator implements Listener {
      * Open menu for a player
      * @param ctx Opening context. This can be Bukkit Event or something else
      * @param player Player to open menu
-     * @param <T> Context type
      */
-    protected <T> void openMenu(T ctx, Player player) {
+    protected void openMenu(Object ctx, Player player) {
         AbstractMenusPlugin plugin = AbstractMenusProvider.get();
         Map<String, String> vars = new HashMap<>();
         vars.put("name", name);
@@ -62,8 +61,7 @@ public abstract class Activator implements Listener {
      * @param ctx Opening context. You need to cast it manually to context what you need.
      *            In many cases you need to cast it to Bukkit Event you used to open menu.
      * @param vars Variables map
-     * @param <T> Context type
      */
-    protected <T> void cache(T ctx, Map<String, String> vars) { }
+    protected void cache(Object ctx, Map<String, String> vars) { }
 
 }
