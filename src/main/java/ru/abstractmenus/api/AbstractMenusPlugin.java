@@ -28,6 +28,14 @@ public interface AbstractMenusPlugin {
     void loadMenus();
 
     /**
+     * Open menu for a player with activator and context
+     * @param activator Activator which caused opening. Might be null
+     * @param player Menu viewer
+     * @param menu Menu to open
+     */
+    void openMenu(Activator activator, Object ctx, Player player, Menu menu);
+
+    /**
      * Open menu for a player
      * @param player Menu viewer
      * @param menu Menu to open

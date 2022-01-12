@@ -27,10 +27,10 @@ public interface Menu extends InventoryHolder, Cloneable {
     Optional<Activator> getActivatedBy();
 
     /**
-     * Set activator which activated this menu
-     * @param activator Activator instance
+     * Get activation context object. This might be event, block, entity, etc
+     * @return Activation context object
      */
-    void setActivatedBy(Activator activator);
+    Optional<Object> openContext();
 
     /**
      * Get menu's inventory type
