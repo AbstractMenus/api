@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public abstract class Activator implements Listener {
 
-    public static final String CACHE_SCOPE = "activators";
+    public static final String CACHE_SCOPE = "#activators";
 
     /**
      * Menu instance
@@ -50,7 +50,7 @@ public abstract class Activator implements Listener {
         vars.put("name", name);
         cache(ctx, vars);
         plugin.getVariableManager().cache()
-                .cache(CACHE_SCOPE, vars);
+                .cache(player.getName(), CACHE_SCOPE, vars);
         plugin.openMenu(player, menu);
     }
 
