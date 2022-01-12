@@ -2,7 +2,6 @@ package ru.abstractmenus.api;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import ru.abstractmenus.api.extractor.ValueExtractor;
 import ru.abstractmenus.api.inventory.Menu;
 
 /**
@@ -33,7 +32,7 @@ public abstract class Activator implements Listener {
         AbstractMenusProvider.get().openMenu(this, ctx, player, menu);
     }
 
-    protected ValueExtractor<?> getValueExtractor() {
+    public ValueExtractor<?> getValueExtractor() {
         return null;
     }
 

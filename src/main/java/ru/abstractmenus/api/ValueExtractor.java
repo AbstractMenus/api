@@ -1,4 +1,4 @@
-package ru.abstractmenus.api.extractor;
+package ru.abstractmenus.api;
 
 /**
  * Implementors of extractor can take some
