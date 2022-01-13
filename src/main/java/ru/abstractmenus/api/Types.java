@@ -16,7 +16,7 @@ public final class Types {
     private static final BiMap<String, Class<? extends Rule>> RULE_TYPES = HashBiMap.create();
     private static final BiMap<String, Class<? extends Activator>> ACTIVATOR_TYPES = HashBiMap.create();
     private static final BiMap<String, Class<? extends ItemProperty>> ITEM_PROPERTIES_TYPES = HashBiMap.create();
-    private static final BiMap<String, Class<? extends Catalog>> CATALOG_TYPES = HashBiMap.create();
+    private static final BiMap<String, Class<? extends Catalog<?>>> CATALOG_TYPES = HashBiMap.create();
 
     private Types() { }
 
@@ -164,7 +164,7 @@ public final class Types {
      * @param serializer Serializer of the catalog
      * @param <T> Type of the catalog
      */
-    public static <T extends Catalog> void registerCatalog(String key, Class<T> token, NodeSerializer<T> serializer){
+    public static <T extends Catalog<?>> void registerCatalog(String key, Class<T> token, NodeSerializer<T> serializer){
         serializers().register(token, serializer);
         CATALOG_TYPES.put(key.toLowerCase(), token);
     }
@@ -174,7 +174,7 @@ public final class Types {
      * @param key Catalog key
      * @return Found TypeToken of the registered catalog of null if token not found
      */
-    public static Class<? extends Catalog> getCatalogType(String key){
+    public static Class<? extends Catalog<?>> getCatalogType(String key){
         return CATALOG_TYPES.get(key.toLowerCase());
     }
 }
