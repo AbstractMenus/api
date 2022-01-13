@@ -33,18 +33,6 @@ public interface Menu extends InventoryHolder, Cloneable {
     Optional<Object> openContext();
 
     /**
-     * Get menu's inventory type
-     * @return Inventory type enum or null if type not specified
-     */
-    InventoryType getType();
-
-    /**
-     * Set menu's inventory type
-     * @param type The type of inventory
-     */
-    void setType(InventoryType type);
-
-    /**
      * Get item in specified slot. This method works with already displayed items
      * @param slot Inventory slot index
      * @return Item object or null if not any items in specified slot

@@ -5,7 +5,6 @@ import com.google.common.collect.HashBiMap;
 import ru.abstractmenus.api.inventory.ItemProperty;
 import ru.abstractmenus.hocon.api.serialize.NodeSerializer;
 import ru.abstractmenus.hocon.api.serialize.NodeSerializers;
-import ru.abstractmenus.api.catalog.Catalog;
 
 /**
  * Serializers provider. All data types for menus registering here
