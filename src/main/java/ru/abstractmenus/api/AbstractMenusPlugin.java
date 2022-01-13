@@ -30,6 +30,7 @@ public interface AbstractMenusPlugin {
     /**
      * Open menu for a player with activator and context
      * @param activator Activator which caused opening. Might be null
+     * @param ctx Opening context (object that causes opening)
      * @param player Menu viewer
      * @param menu Menu to open
      */
