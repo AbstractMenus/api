@@ -1,7 +1,6 @@
 package ru.abstractmenus.api.inventory;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.InventoryHolder;
 import ru.abstractmenus.api.Activator;
 
@@ -60,16 +59,15 @@ public interface Menu extends InventoryHolder, Cloneable {
     /**
      * Open menu for required player. Do not use this method to open menu. Always use AbstractMenusPlugin instance (wee wiki)
      * @param player Required player
-     * @return true if menu opened or false otherwise
+     * @return true if menu opened or false otherwise (for example, if player doesn't match rules)
      */
     boolean open(Player player);
 
     /**
      * Refresh items in the menu
      * @param player Required player
-     * @return true if player conforms to the rules to open this menu or false otherwise
      */
-    boolean refresh(Player player);
+    void refresh(Player player);
 
     /**
      * Refresh item in specified inventory slot
@@ -87,7 +85,7 @@ public interface Menu extends InventoryHolder, Cloneable {
     void setItem(Slot slot, Item item, Player player);
 
     /**
-     * Update this menu. This method uses to auto update by interval
+     * Update this menu. This method uses for auto updates by interval
      * @param player Who opened menu
      */
     void update(Player player);
