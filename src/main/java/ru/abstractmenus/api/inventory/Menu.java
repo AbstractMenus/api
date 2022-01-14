@@ -1,6 +1,7 @@
 package ru.abstractmenus.api.inventory;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.InventoryHolder;
 import ru.abstractmenus.api.Activator;
 
@@ -104,6 +105,14 @@ public interface Menu extends InventoryHolder, Cloneable {
      * @param closeInventory Is inventory must be closed
      */
     void close(Player player, boolean closeInventory);
+
+    /**
+     * Process click on specified slot
+     * @param slot Clicked slot
+     * @param player Player who clicked
+     * @param type Click type enum
+     */
+    void click(int slot, Player player, ClickType type);
 
     /**
      * Make copy if this menu
