@@ -30,7 +30,7 @@ public interface Menu extends InventoryHolder, Cloneable {
      * Get activation context object. This might be event, block, entity, etc
      * @return Activation context object
      */
-    Optional<Object> openContext();
+    Optional<Object> getContext();
 
     /**
      * Get item in specified slot. This method works with already displayed items
@@ -119,11 +119,4 @@ public interface Menu extends InventoryHolder, Cloneable {
      * @return Copy of the menu
      */
     Menu clone();
-
-    /**
-     * Make menu copy with replacing some placeholders
-     * @param player Required player
-     * @return Copied menu
-     */
-    Menu clone(Player player);
 }

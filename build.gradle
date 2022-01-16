@@ -3,6 +3,12 @@ plugins {
     id 'maven-publish'
 }
 
+configurations {
+    doc {
+        transitive false
+    }
+}
+
 group 'ru.abstractmenus'
 version '1.14'
 
@@ -19,8 +25,16 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
     implementation 'com.github.AbstractMenus:hocon:1.0.4'
+    doc 'com.github.AbstractMenus:hocon:1.0.4:sources'
 
     compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
+}
+
+javadoc {
+    title "AbstractMenus ${project.version} API"
+    source configurations.doc.collect { zipTree(it) }
+    include '**/*.java'
+    options.addStringOption('Xdoclint:none', '-quiet')
 }
 
 java {

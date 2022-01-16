@@ -5,6 +5,8 @@ import org.bukkit.plugin.Plugin;
 import ru.abstractmenus.api.inventory.Menu;
 import ru.abstractmenus.api.variables.VariableManager;
 
+import java.util.Optional;
+
 /**
  * Base plugin interface
  */
@@ -42,5 +44,12 @@ public interface AbstractMenusPlugin {
      * @param menu Menu to open
      */
     void openMenu(Player player, Menu menu);
+
+    /**
+     * Get opened menu by player who opened this menu
+     * @param player Menu viewer
+     * @return Found menu in Optional wrapper or Optional.EMPTY otherwise
+     */
+    Optional<Menu> getOpenedMenu(Player player);
 
 }
