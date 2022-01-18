@@ -4,7 +4,11 @@ API for AbstractMenus plugin.
 
 ## Usage
 
-**Docs:** https://abstractmenus.github.io/docs/dev/api.html
+**Docs:** https://abstractmenus.github.io/docs/dev/general.html
+
+Note, that latest API version is not the latest version of AbstractMenus plugin. 
+Several AM version can use same API. 
+You can check last version in [releases section on jitpack](https://jitpack.io/#AbstractMenus/api)
 
 ### Gradle
 
@@ -14,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'com.github.AbstractMenus:api:main-SNAPSHOT'
+    compileOnly 'com.github.AbstractMenus:api:1.14'
 }
 ```
 
@@ -32,7 +36,7 @@ dependencies {
     <dependency>
         <groupId>com.github.AbstractMenus</groupId>
         <artifactId>api</artifactId>
-        <version>main-SNAPSHOT</version>
+        <version>1.14</version>
     </dependency>
 </dependencies>
 ```
