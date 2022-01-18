@@ -32,6 +32,10 @@ public abstract class Activator implements Listener {
         AbstractMenusProvider.get().openMenu(this, ctx, player, menu);
     }
 
+    /**
+     * Get value extractor for this activator. Can be null
+     * @return ValueExtractor instance
+     */
     public ValueExtractor getValueExtractor() {
         return null;
     }
