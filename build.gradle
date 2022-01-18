@@ -24,8 +24,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
-    implementation 'com.github.AbstractMenus:hocon:1.0.4'
-    doc 'com.github.AbstractMenus:hocon:1.0.4:sources'
+    api 'com.github.AbstractMenus:hocon:1.0.6'
+    doc 'com.github.AbstractMenus:hocon:1.0.6:sources'
 
     compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
 }
