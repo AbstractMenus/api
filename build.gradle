@@ -10,7 +10,7 @@ configurations {
 }
 
 group 'ru.abstractmenus'
-version '1.14'
+version '1.15.3'
 
 repositories {
     mavenCentral()
