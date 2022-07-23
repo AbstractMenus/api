@@ -12,7 +12,7 @@ public interface PlaceholderHandler {
     /**
      * Replace only given placeholder
      * @param player Context player
-     * @param placeholder Placeholder key
+     * @param placeholder Placeholder key without '%' chars
      * @return Replaced value
      */
     String replacePlaceholder(Player player, String placeholder);
