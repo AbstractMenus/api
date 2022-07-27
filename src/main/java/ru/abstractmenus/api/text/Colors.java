@@ -11,16 +11,18 @@ import java.util.regex.Pattern;
  */
 public class Colors {
 
-    private static final Pattern PATTERN = Pattern.compile("<#([A-Fa-f0-9]){6}>");
-    private static boolean supportHex;
+    private static final char COLOR_PREFIX = '&';
+    private static Replacer replacer;
 
-    static{
-        try{
-            Class.forName("net.md_5.bungee.api.ChatColor")
-                    .getDeclaredMethod("of", String.class);
-            supportHex = true;
-        } catch (Throwable t){
-            supportHex = false;
+    /**
+     * Initialize util. Do not call this method manually
+     * @param replaceRgb Replace RGB tags
+     */
+    public static void init(boolean replaceRgb) {
+        if (isSupportRgb() && replaceRgb) {
+            replacer = new RgbReplacer();
+        } else {
+            replacer = new SimpleReplacer();
         }
     }
 
@@ -30,20 +32,7 @@ public class Colors {
      * @return String with replaced colors
      */
     public static String of(String line) {
-        if (supportHex) {
-            Matcher matcher = PATTERN.matcher(line);
-
-            while (matcher.find()) {
-                net.md_5.bungee.api.ChatColor hexColor = net.md_5.bungee.api.ChatColor.of(matcher.group()
-                        .substring(1, matcher.group().length() - 1));
-                String before = line.substring(0, matcher.start());
-                String after = line.substring(matcher.end());
-                line = before + hexColor + after;
-                matcher = PATTERN.matcher(line);
-            }
-        }
-
-        return ChatColor.translateAlternateColorCodes('&', line);
+        return replacer.replace(line);
     }
 
     /**
@@ -69,6 +58,50 @@ public class Colors {
             array[i] = of(array[i]);
         }
         return array;
+    }
+
+    private static boolean isSupportRgb() {
+        try {
+            Class.forName("net.md_5.bungee.api.ChatColor")
+                    .getDeclaredMethod("of", String.class);
+            return true;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
+    private interface Replacer {
+        String replace(String input);
+    }
+
+    private static class SimpleReplacer implements Replacer {
+
+        @Override
+        public String replace(String input) {
+            return ChatColor.translateAlternateColorCodes(COLOR_PREFIX, input);
+        }
+    }
+
+    private static class RgbReplacer implements Replacer {
+
+        private static final Pattern PATTERN = Pattern.compile("<#([A-Fa-f0-9]){6}>");
+
+        @Override
+        public String replace(String input) {
+            Matcher matcher = PATTERN.matcher(input);
+
+            while (matcher.find()) {
+                String group = matcher.group();
+                net.md_5.bungee.api.ChatColor hexColor = net.md_5.bungee.api.ChatColor.of(group
+                        .substring(1, group.length() - 1));
+                String before = input.substring(0, matcher.start());
+                String after = input.substring(matcher.end());
+                input = before + hexColor + after;
+                matcher = PATTERN.matcher(input);
+            }
+
+            return ChatColor.translateAlternateColorCodes(COLOR_PREFIX, input);
+        }
     }
 
 }
