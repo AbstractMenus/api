@@ -1,3 +1,16 @@
+# DEPRECATED! USE NEW API HERE: https://github.com/AbstractMenus/minecraft-plugin
+# DEPRECATED! USE NEW API HERE: https://github.com/AbstractMenus/minecraft-plugin
+# DEPRECATED! USE NEW API HERE: https://github.com/AbstractMenus/minecraft-plugin
+# DEPRECATED! USE NEW API HERE: https://github.com/AbstractMenus/minecraft-plugin
+# DEPRECATED! USE NEW API HERE: https://github.com/AbstractMenus/minecraft-plugin
+# DEPRECATED! USE NEW API HERE: https://github.com/AbstractMenus/minecraft-plugin
+# DEPRECATED! USE NEW API HERE: https://github.com/AbstractMenus/minecraft-plugin
+
+
+
+
+
+
 # AbstractMenus API
 
 API for AbstractMenus plugin.
